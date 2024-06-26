@@ -19,33 +19,20 @@ print("client")
 # Удаляем пользователя.
 # response = requests.delete("http://127.0.0.1:5000/user/1/")
 
+# Создаем новое объявление.
 # response = requests.post("http://127.0.0.1:5000/ads/",
 #                          json={"title": "Пирожки",
 #                                "description": "Продаю пирожки.",
 #                                "owner_id": 3})
 
+# Читаем объявление.
 # response = requests.get("http://127.0.0.1:5000/ads/10/")
 
-
-# # URL для создания объявления
-# url = "http://127.0.0.1:5000/ads/"
-#
-# # Тело запроса с данными для нового объявления
-# data = {
-#     "title": "Новый автомобиль",
-#     "description": "Продаю новый автомобиль 2024 года выпуска."
-# }
-#
-# # Отправляем POST запрос
-# response = requests.post(url, json=data)
-#
-# # Проверяем результат
-# if response.status_code == 201:
-#     print("Объявление успешно создано.")
-#     print(response.json())
-# else:
-#     print("Ошибка при создании объявления:", response.text)
-
+# Редактируем объявление.
+# response = requests.get("http://127.0.0.1:5000/ads/10/",
+#                          json={"title": "Пирожки",
+#                                "description": "Продаю пирожки.",
+#                                "owner_id": 3})
 
 
 print(response.status_code)

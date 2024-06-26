@@ -55,7 +55,7 @@ class Ads(Base):
             "title": self.title,
             "description": self.description,
             "registration_time": self.registration_time.isoformat(),
-            "owner": self.owner.name
+            "owner": self.owner_id
         }
 
 
