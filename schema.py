@@ -2,7 +2,6 @@
 # определения форматов данных для создания и обновления пользовательских записей.
 print("schema")
 from typing import Optional, Type  # Импорт типов Optional (для необязательных значений) и Type (для типа класса).
-
 import pydantic  # Импорт модуля pydantic для работы с валидацией данных.
 from pydantic import BaseModel  # Импорт базовой модели данных из pydantic.
 
