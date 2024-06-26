@@ -19,12 +19,12 @@ print("client")
 # Удаляем пользователя.
 # response = requests.delete("http://127.0.0.1:5000/user/1/")
 
-response = requests.post("http://127.0.0.1:5000/ads/",
-                         json={"title": "Старый автомобиль",
-                               "description": "Продаю б.у. автомобиль 2010 года выпуска.",
-                               "owner_id": 3})
+# response = requests.post("http://127.0.0.1:5000/ads/",
+#                          json={"title": "Пирожки",
+#                                "description": "Продаю пирожки.",
+#                                "owner_id": 3})
 
-# response = requests.get("http://127.0.0.1:5000/ads/4/")
+# response = requests.get("http://127.0.0.1:5000/ads/10/")
 
 
 # # URL для создания объявления

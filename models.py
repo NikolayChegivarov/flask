@@ -1,4 +1,3 @@
-print("models")
 import datetime
 import os
 from sqlalchemy.orm import sessionmaker, DeclarativeBase, mapped_column, Mapped  # Импорт необходимых инструментов ORM SQLAlchemy.
@@ -9,6 +8,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from dotenv import load_dotenv
 load_dotenv()
+print("models")
 
 # Получаем переменные окружения для настройки подключения к PostgreSQL.
 POSTGRES_USER = os.getenv("POSTGRES_USER")
@@ -51,11 +51,11 @@ class Ads(Base):
     @property
     def json(self):
         return {
-            "id": self.id,
+            "id": self.ads_id,  # Corrected from 'self.id'
             "title": self.title,
             "description": self.description,
             "registration_time": self.registration_time.isoformat(),
-            "owner": self.owner.name  # Доступ к имени владельца через отношения
+            "owner": self.owner.name
         }
 
 

@@ -1,13 +1,11 @@
-print("server")
 import flask_bcrypt  # Импорт модуля для работы с хешированием паролей в Flask.
 import pydantic  # Импорт библиотеки pydantic для валидации данных.
 from flask import Flask, Response, jsonify, request  # Импорт необходимых классов и функций из Flask для создания веб-приложения.
 from flask.views import MethodView  # Импорт класса MethodView из Flask для создания классовых представлений.
 from sqlalchemy.exc import IntegrityError  # Импорт исключения IntegrityError из SQLAlchemy для обработки ошибок целостности данных.
-
 from models import Session, User, Ads  # Импорт моделей данных User и Ads из модуля models.
 from schema import CreateUser, Schema, UpdateUser, CreateAds, UpdateAds  # Импорт схем данных CreateUser, Schema, UpdateUser из модуля schema.
-
+print("server")
 app = Flask("app")  # Создание экземпляра Flask с именем "app".
 bcrypt = flask_bcrypt.Bcrypt(app)  # Создание экземпляра Bcrypt для работы с хешированием паролей в приложении Flask.
 
@@ -175,7 +173,6 @@ class AdsView(MethodView):
         ads = get_ads(ads_id)
         return jsonify(ads.json)
 
-
     def post(self):
         """Создает объявление"""
         try:
@@ -221,6 +218,7 @@ class AdsView(MethodView):
         self.session.delete(ads)
         self.session.commit()
         return jsonify({"status": "deleted"})
+
 
 # Что бы мы могли привязывать наш класс к url приобразовываем класс во viev функцию
 user_view = UserView.as_view("user")
