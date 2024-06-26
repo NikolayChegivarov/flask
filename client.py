@@ -29,11 +29,13 @@ print("client")
 # response = requests.get("http://127.0.0.1:5000/ads/10/")
 
 # Редактируем объявление.
-response = requests.post("http://127.0.0.1:5000/ads/10/",
-                         json={"title": "Пирожки",
-                               "description": "Продаю пирожки.",
-                               "owner_id": 3})
+# response = requests.patch("http://127.0.0.1:5000/ads/10/",
+#                          json={"title": "Пирожки",
+#                                "description": "Продаю пирожки.",
+#                                "owner_id": 3})
 
+# Удалить объявление.
+response = requests.delete("http://127.0.0.1:5000/ads/12/")
 
 print(response.status_code)
 print(response.json())

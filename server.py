@@ -214,7 +214,7 @@ class AdsView(MethodView):
 
     def delete(self, ads_id):
         """Удаляет объявление."""
-        ads = get_user(ads_id)
+        ads = get_ads(ads_id)
         self.session.delete(ads)
         self.session.commit()
         return jsonify({"status": "deleted"})
